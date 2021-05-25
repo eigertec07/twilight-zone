@@ -1,14 +1,13 @@
+let play = false
 input.onButtonPressed(Button.A, function () {
     play = true
 })
 input.onButtonPressed(Button.B, function () {
     play = false
 })
-let play = false
-let beat = 0
 basic.forever(function () {
     if (play) {
-        music.playTone(831, beat)
+        music.playTone(831, music.beat(BeatFraction.Sixteenth))
         basic.showLeds(`
             . . . . .
             # . . . .
@@ -16,7 +15,7 @@ basic.forever(function () {
             . . . . .
             . . . . .
             `)
-        music.playTone(880, beat)
+        music.playTone(880, music.beat(BeatFraction.Sixteenth))
         basic.showLeds(`
             . # . . .
             . . . . .
@@ -24,7 +23,7 @@ basic.forever(function () {
             . . . . .
             . . . . .
             `)
-        music.playTone(831, beat)
+        music.playTone(831, music.beat(BeatFraction.Sixteenth))
         basic.showLeds(`
             . . . . .
             . . # . .
@@ -32,7 +31,7 @@ basic.forever(function () {
             . . . . .
             . . . . .
             `)
-        music.playTone(659, beat)
+        music.playTone(659, music.beat(BeatFraction.Sixteenth))
         basic.showLeds(`
             . . . . .
             . . . . .
